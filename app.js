@@ -1,15 +1,15 @@
 "use strict";
 
 import express from "express";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
 import firebase from "firebase";
 import "@firebase/firestore";
 import { type } from "os";
+import { createDirname } from "./utils/util.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+
 const app = express();
 const port = 3000;
+const getAbsolutePath = createDirname(import.meta.url);
 
 //DB:
 
@@ -113,7 +113,3 @@ app.delete("/api/questions/:id", async (req, res, next) => {
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
-
-function getAbsolutePath(dirName) {
-  return path.join(__dirname, dirName);
-}
