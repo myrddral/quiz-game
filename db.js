@@ -1,5 +1,6 @@
-import "@firebase/firestore";
-import { firebase } from "./firebaseApp.js";
+import '@firebase/firestore';
+
+import { firebase } from './firebaseApp.js';
 
 const db = firebase.firestore();
 
