@@ -8,15 +8,25 @@ class Game {
       .then((response) => response.json())
       .then((result) => {
         const questionDiv = document.getElementById("question");
-        const answerButtons = document.querySelectorAll("#answers .answer");
-
         questionDiv.textContent = result.question;
+        const ul = document.createElement('ul');
 
-        answerButtons.forEach((button, ix) => {
-          button.textContent = result.answers[ix].answer;
-          button.addEventListener("click", () => {});
-        });
-      });
+        for (let i = 0; i < result.answers.length; i++) {
+          const answersDiv = document.getElementById('answers');
+          const li = document.createElement('li');
+          const button = document.createElement('button');
+          answersDiv.appendChild(ul);
+          ul.appendChild(li);
+          li.appendChild(button);
+          button.textContent = result.answers[i].answer;
+        }
+          
+        //   // button.addEventListener("click", () => {});
+        // });
+      })
+      .catch((error) => {
+        console.error(error);
+      })
   }
 
   increaseScore() {
