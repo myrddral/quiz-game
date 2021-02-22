@@ -47,7 +47,7 @@ class Game {
 
   newGame() {
     setTimeout(() => {
-      document.getElementById('answers').innerHTML = '';
+      document.getElementById('answers').textContent = '';
       this.getNewQuestion();
     }, 2000);
   }

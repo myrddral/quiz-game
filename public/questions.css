@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    background: url(https://sourcedigit.com/wp-content/uploads/2020/03/Focal-Fossa_Plain_1-1536x864.png);
+    background-size: 200vh;
+    background-repeat: no-repeat;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12pt;
+  }
+  
+  main {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+  }
+
+  main #questions {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    border-radius: 10px;
+    /* box-shadow: 0px 1px 8px 1px #242424; */
+  }
+
+  main #header {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 1.4em;
+    font-weight: 400;
+    text-shadow: 1px 1px #000000;
+  }
+
+  nav {
+    text-align: center;
+    text-shadow: 1px 1px #000000;
+  }
+  
+  nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 0.9em;
+  }
