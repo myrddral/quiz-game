@@ -93,6 +93,11 @@ main #answers {
   background-color: green;
 }
 
+#answers button.wrong-answer {
+  background-image: none;
+  background-color: rgb(255, 0, 0);
+}
+
 #answers button:focus {
   outline:0;
 }

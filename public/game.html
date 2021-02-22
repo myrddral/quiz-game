@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="game.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
     <title>Quiz Game</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <main>
-        <div id="score">Pontszám: <span>0</span></div>
-        <div id="game">
-            <div id="question">Hányan voltak az aradi tizenhármak?</div>
-            <div id="answers">
-                <ul>
-                    <li>
-                        <button id="answer1" class="answer">10</button>
-                    </li>
-                    <li>
-                        <button id="answer2" class="answer">12</button>
-                    </li>
-                    <li>
-                        <button id="answer3" class="answer">30</button>
-                    </li>
-                    <li>
-                        <button id="answer4" class="answer">13</button>
-                    </li>
-                </ul>
-            </div>
+      <div id="score">Pontszám: <span>0</span></div>
+      <div id="game">
+        <div id="question"></div>
+        <div id="answers">
+          <ul>
+            <li>
+              <button id="answer1" data-id="1" class="answer"></button>
+            </li>
+            <li>
+              <button id="answer2" data-id="2" class="answer"></button>
+            </li>
+            <li>
+              <button id="answer3" data-id="3" class="answer"></button>
+            </li>
+            <li>
+              <button id="answer4" data-id="4" class="answer"></button>
+            </li>
+          </ul>
         </div>
-        <nav>
-            <a href="/questions">Kérdések szerkesztése</a>
-        </nav>
+      </div>
+      <nav>
+        <a href="/questions">Kérdések szerkesztése</a>
+      </nav>
     </main>
 
-
     <script src="game.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script> -->
-</body>
-
+  </body>
 </html>
