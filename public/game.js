@@ -28,31 +28,16 @@ class Game {
             if (result.answers[i].is_correct === true) {
               button.classList.add('correct-answer');
               // DISALLOW USER TO CLICK TWICE
-              disableButtons();
+              this.disableButtons();
+              this.increaseScore();
+              this.newGame();
             } else {
               button.classList.add('wrong-answer');
-              disableButtons();
-              showCorrectAnswer();
+              this.disableButtons();
+              this.showCorrectAnswer(result.answers);
+              this.newGame();
             }
           });
-        }
-
-        const answerButtons = document.querySelectorAll("#answers button");
-        
-        function disableButtons () {
-          answerButtons.forEach(element => {
-            element.disabled = true;
-          });
-        }
-
-        function showCorrectAnswer () {
-          for (let i = 0; i < result.answers.length; i++) {
-            const button = document.querySelector(`.answer${i+1}`)
-            console.log(button);
-            if (result.answers[i].is_correct === true) {
-              button.classList.add('correct-answer');
-            }
-          }
         }
       })
       .catch((error) => {
@@ -60,11 +45,35 @@ class Game {
       })
   }
 
+  newGame() {
+    setTimeout(() => {
+      document.getElementById('answers').innerHTML = '';
+      this.getNewQuestion();
+    }, 2000);
+  }
+
   increaseScore() {
     this.score++;
 
     const scoreSpan = document.querySelector("#score span");
     scoreSpan.textContent = this.score;
+  }
+        
+  disableButtons () {
+    const answerButtons = document.querySelectorAll("#answers button");
+
+    answerButtons.forEach(element => {
+      element.disabled = true;
+    });
+  }
+
+  showCorrectAnswer (answers) {
+    for (let i = 0; i < answers.length; i++) {
+      const button = document.querySelector(`.answer${i+1}`)
+      if (answers[i].is_correct === true) {
+        button.classList.add('correct-answer');
+      }
+    }
   }
 }
 
