@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background: url(https://sourcedigit.com/wp-content/uploads/2020/03/Focal-Fossa_Plain_1-1536x864.png);
+  background-size: 200vh;
+  background-repeat: no-repeat;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12pt;
+}
+
+main {
+  width: 400px;
+  height: 500px;
+  margin: auto;
+}
+
+main #score,
+main #game,
+nav {
+  margin: 10px 0;
+}
+
+main #score {
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-size: 1.4em;
+  font-weight: 400;
+  text-shadow: 1px 1px #000000;
+}
+
+main #game {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  border-radius: 10px;
+  /* box-shadow: 0px 1px 8px 1px #242424; */
+}
+
+main #question {
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  padding: 20px;
+}
+
+main #answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 0px 20px;
+}
+
+#answers ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+  width: 80%;
+}
+
+#answers ul li {
+  width: 100%;
+}
+
+#answers button {
+  background-image: linear-gradient(
+    to right,
+    #ff512f 0%,
+    #dd2476 51%,
+    #ff512f 100%
+  );
+  width: 100%;
+  opacity: 0.8;
+  margin: 4px;
+  padding: 15px 45px;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  transition: 0.3s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 2px 2px 4px rgb(59, 59, 59);
+  border-radius: 10px;
+  border: 0px;
+  display: block;
+}
+
+#answers button.correct-answer {
+  background-image: none;
+  background-color: green;
+}
+
+#answers button:focus {
+  outline:0;
+}
+
+#answers button:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#answers button:active {
+  transform: scale(1.0);
+}
+
+nav {
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+}
+
+nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 0.9em;
+}
