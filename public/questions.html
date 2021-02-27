@@ -16,28 +16,31 @@
       <form action="/api/questions" method="POST" id="form-control">
         <label for="editorQuestion"></label>
         <input id="editorQuestion" placeholder="Írd ide a kérdést!">
+        <p>Helyes?</p>
         <fieldset>
           <label for="editorAnswer1"></label>
           <input id="editorAnswer1" placeholder="Ide írd a választ!">
-          <input type="checkbox">
+          <input type="checkbox" onclick="onlyOne(this)">
         </fieldset>
         <fieldset>
           <label for="editorAnswer2"></label>
           <input id="editorAnswer2" placeholder="Ide írd a választ!">
-          <input type="checkbox">
+          <input type="checkbox" onclick="onlyOne(this)">
         </fieldset>
         <fieldset>
           <label for="editorAnswer3"></label>
           <input id="editorAnswer3" placeholder="Ide írd a választ!">
-          <input type="checkbox">
+          <input type="checkbox" onclick="onlyOne(this)">
         </fieldset>
         <fieldset>
           <label for="editorAnswer4"></label>
           <input id="editorAnswer4" placeholder="Ide írd a választ!">
-          <input type="checkbox">
+          <input type="checkbox" onclick="onlyOne(this)">
         </fieldset>
-        <button type="submit">Hozzáadás</button>
-        <button type="submit">Mezők törlése</button>
+        <div class="editorButtons">
+          <button type="submit">Hozzáadás</button>
+          <button type="submit">Mezők törlése</button>
+        </div>
       </form>
 
       </div>

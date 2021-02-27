@@ -1,6 +1,7 @@
 "use strict";
 
 class Questions {
+
   async getAllQuestions() {
     fetch("http://localhost:3000/api/questions")
       .then((response) => response.json())
@@ -26,3 +27,11 @@ window.onload = () => {
 
   questions.getAllQuestions();
 };
+
+//MAKES SURE ONLY ONE RIGHT ANSWER CAN BE SELECTED
+function onlyOne(checkbox) {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach((item) => {
+      if (item !== checkbox) item.checked = false
+  })
+}

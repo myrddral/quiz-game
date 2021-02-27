@@ -7,7 +7,6 @@ class Game {
     fetch(`http://localhost:3000/api/game`)
       .then((response) => response.json())
       .then((result) => {
-        // console.log(result);
         const questionDiv = document.getElementById("question");
         questionDiv.textContent = result.question;
         const ul = document.createElement("ul");
