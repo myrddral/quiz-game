@@ -103,7 +103,7 @@ main #answers {
 }
 
 #answers button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   opacity: 1;
   background-position: right center; /* change the direction of the change here */
   color: #fff;

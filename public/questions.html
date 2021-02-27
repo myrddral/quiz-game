@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="questions.css" />
-    <title>Questions</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="questions.css" />
+  <title>Questions</title>
 </head>
+
 <body>
-<main>
-    <div id="questions">
-      <div id="header">Questions</div>
-      <div id="question-list"></div>
+  <main>
+    <div id="editor">
+      <header>Kérdés hozzáadása</header>
+      <form action="/api/questions" method="POST" id="form-control">
+        <label for="editorQuestion"></label>
+        <input id="editorQuestion" placeholder="Írd ide a kérdést!">
+        <fieldset>
+          <label for="editorAnswer1"></label>
+          <input id="editorAnswer1" placeholder="Ide írd a választ!">
+          <input type="checkbox">
+        </fieldset>
+        <fieldset>
+          <label for="editorAnswer2"></label>
+          <input id="editorAnswer2" placeholder="Ide írd a választ!">
+          <input type="checkbox">
+        </fieldset>
+        <fieldset>
+          <label for="editorAnswer3"></label>
+          <input id="editorAnswer3" placeholder="Ide írd a választ!">
+          <input type="checkbox">
+        </fieldset>
+        <fieldset>
+          <label for="editorAnswer4"></label>
+          <input id="editorAnswer4" placeholder="Ide írd a választ!">
+          <input type="checkbox">
+        </fieldset>
+        <button type="submit">Hozzáadás</button>
+        <button type="submit">Mezők törlése</button>
+      </form>
+
+      </div>
     </div>
     <nav>
-        <a href="/game">Játék indítása</a>
-      </nav>
-</main>
-<script src="questions.js"></script>
+      <a href="/game">Vissza a játékhoz</a>
+    </nav>
+      <div id="lister">
+        <header>Összes kérdés</header>
+        <div id="question-list"></div>
+      </div>
+  </main>
+  <script src="questions.js"></script>
 </body>
+
 </html>
