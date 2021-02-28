@@ -13,12 +13,21 @@ class Questions {
           question.className = "question";
           questionsDiv.appendChild(question);
           question.textContent = element.question;
-          question.onclick = () => this.showAnsers();
+          const deleteButton = document.createElement("button");
+          deleteButton.className = "hidden";
+          deleteButton.innerText = "Törlés";
+          questionsDiv.appendChild(deleteButton);
+          question.onclick = () => this.showActions(deleteButton);
         });
       })
       .catch((error) => {
         console.error(error);
       });
+  }
+
+  showActions(button) {
+      button.classList.remove("hidden");
+      // button.classList.add("hidden");
   }
 }
 

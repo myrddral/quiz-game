@@ -42,12 +42,12 @@ export default class QuestionsController {
   static async addNewQuestion(req, res, next) {
     const inputData = req.body;
   
-    try {
-      QuestionsController.validateInput(inputData);
-    }
-    catch(err) {
-      return next(err);
-    }
+    // try {
+    //   QuestionsController.validateInput(inputData);
+    // }
+    // catch(err) {
+    //   return next(err);
+    // }
   
     const doc = await QuestionsRepository.add(inputData);
   
