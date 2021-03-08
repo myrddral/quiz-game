@@ -13,28 +13,28 @@
   <main>
     <div id="editor">
       <header>Kérdés hozzáadása</header>
-      <form id="form-control">
+      <form id="form-control" autocomplete="off">
         <label for="editorQuestion"></label>
         <input id="editorQuestion" placeholder="Írd ide a kérdést!">
         <p>Helyes?</p>
         <fieldset>
           <label for="editorAnswer1"></label>
-          <input id="editorAnswer1" placeholder="Ide írd a választ!">
+          <input id="editorAnswer1" placeholder="Ide írd a választ! #1">
           <input id="checkbox1" type="checkbox" onclick="onlyOne(this)">
         </fieldset>
         <fieldset>
           <label for="editorAnswer2"></label>
-          <input id="editorAnswer2" placeholder="Ide írd a választ!">
+          <input id="editorAnswer2" placeholder="Ide írd a választ! #2">
           <input id="checkbox2" type="checkbox" onclick="onlyOne(this)">
         </fieldset>
         <fieldset>
           <label for="editorAnswer3"></label>
-          <input id="editorAnswer3" placeholder="Ide írd a választ!">
+          <input id="editorAnswer3" placeholder="Ide írd a választ! #3">
           <input id="checkbox3" type="checkbox" onclick="onlyOne(this)">
         </fieldset>
         <fieldset>
           <label for="editorAnswer4"></label>
-          <input id="editorAnswer4" placeholder="Ide írd a választ!">
+          <input id="editorAnswer4" placeholder="Ide írd a választ! #4">
           <input id="checkbox4" type="checkbox" onclick="onlyOne(this)">
         </fieldset>
       </form>

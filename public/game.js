@@ -4,7 +4,7 @@ class Game {
   score = 0;
 
   async getNewQuestion() {
-    fetch(`http://localhost:3000/api/game`)
+    fetch(`/api/game`)
       .then((response) => response.json())
       .then((result) => {
         const questionDiv = document.getElementById("question");

@@ -5,7 +5,6 @@ class Questions {
     fetch("/api/questions")
       .then((response) => response.json())
       .then((result) => {
-        // console.log(result);
         const questionsDiv = document.getElementById("question-list");
         result.forEach((element) => {
           const question = document.createElement("div");
@@ -13,10 +12,11 @@ class Questions {
           questionsDiv.appendChild(question);
           question.textContent = element.question;
           const deleteButton = document.createElement("button");
-          deleteButton.className = "hidden";
+          deleteButton.classList.add('hidden', 'delete-button');
           deleteButton.innerText = "Törlés";
           questionsDiv.appendChild(deleteButton);
           question.onclick = () => this.showActions(deleteButton);
+          deleteButton.onclick = () => this.deleteQuestion(element.id);
         });
       })
       .catch((error) => {
@@ -56,27 +56,33 @@ class Questions {
       ],
     };
     (async () => {
-      const rawResponse = await fetch('/api/questions', {
-        method: 'POST',
+      const rawResponse = await fetch("/api/questions", {
+        method: "POST",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
       const content = await rawResponse.json();
-    
+
       console.log(content);
     })();
-
+    document.getElementById("form-control").reset();
+    alert("Kérdés hozzáadva az adatbázishoz!");
+    // const questionsDiv = document.getElementById("question-list");
+    // questionsDiv.remove();
+    // this.getAllQuestions();
+    location.reload();
   }
 
-  deleteQuestion() {
-    fetch('/api/questions/:id' + id, {
-  method: 'DELETE',
-})
-.then(res => res.text()) // or res.json()
-.then(res => console.log(res))
+  async deleteQuestion(id) {
+    fetch(`/api/questions/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.text()) // or res.json()
+      .then((res) => console.log(res));
+      location.reload();
   }
 
   showActions(button) {
@@ -94,7 +100,7 @@ window.onload = () => {
   const addButton = document.getElementById("addButton");
   const resetButton = document.getElementById("resetButton");
   addButton.onclick = () => questions.addQuestion();
-  resetButton.onclick = () => questions.addQuestion();
+  resetButton.onclick = () => document.getElementById("form-control").reset();
 
   questions.getAllQuestions();
 };

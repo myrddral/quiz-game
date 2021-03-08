@@ -36,6 +36,13 @@ main #lister {
   margin-bottom: 20px;
 }
 
+main #lister {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 main .question {
   margin: 10px;
   background-color: rgba(255, 255, 255, 0.1);
