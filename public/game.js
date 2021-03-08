@@ -24,6 +24,7 @@ class Game {
 
           //ADD CLICK EVENT TO ANSWER BUTTONS
           button.addEventListener("click", () => {
+            button.style.transform = "scale(1.05)";
             if (result.answers[i].is_correct === true) {
               // DISALLOW USER TO CLICK TWICE
               this.disableButtons();

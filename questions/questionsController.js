@@ -27,7 +27,7 @@ export default class QuestionsController {
     for (let i = 0; i < inputData.answers.length; i++) {
       const answerObject = inputData.answers[i];
   
-      if (typeof answerObject.answer !== 'string' || answerObject.answer.length < 3) {
+      if (typeof answerObject.answer !== 'string' || answerObject.answer.length < 1) {
         throw new Error(`invalid answer[${ i }]`);
       }
       if (typeof answerObject.is_correct !== 'boolean') {
@@ -42,12 +42,12 @@ export default class QuestionsController {
   static async addNewQuestion(req, res, next) {
     const inputData = req.body;
   
-    // try {
-    //   QuestionsController.validateInput(inputData);
-    // }
-    // catch(err) {
-    //   return next(err);
-    // }
+    try {
+      QuestionsController.validateInput(inputData);
+    }
+    catch(err) {
+      return next(err);
+    }
   
     const doc = await QuestionsRepository.add(inputData);
   

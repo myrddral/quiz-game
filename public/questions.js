@@ -1,12 +1,11 @@
 "use strict";
 
 class Questions {
-
   async getAllQuestions() {
-    fetch("http://localhost:3000/api/questions")
+    fetch("/api/questions")
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         const questionsDiv = document.getElementById("question-list");
         result.forEach((element) => {
           const question = document.createElement("div");
@@ -25,14 +24,77 @@ class Questions {
       });
   }
 
+  addQuestion() {
+    const questionValue = document.getElementById("editorQuestion").value;
+    const editorAnswer1Value = document.getElementById("editorAnswer1").value;
+    const editorAnswer2Value = document.getElementById("editorAnswer2").value;
+    const editorAnswer3Value = document.getElementById("editorAnswer3").value;
+    const editorAnswer4Value = document.getElementById("editorAnswer4").value;
+    const checkBox1 = document.getElementById("checkbox1");
+    const checkBox2 = document.getElementById("checkbox2");
+    const checkBox3 = document.getElementById("checkbox3");
+    const checkBox4 = document.getElementById("checkbox4");
+    const formData = {
+      question: `${questionValue}`,
+      answers: [
+        {
+          answer: `${editorAnswer1Value}`,
+          is_correct: checkBox1.checked,
+        },
+        {
+          answer: `${editorAnswer2Value}`,
+          is_correct: checkBox2.checked,
+        },
+        {
+          answer: `${editorAnswer3Value}`,
+          is_correct: checkBox3.checked,
+        },
+        {
+          answer: `${editorAnswer4Value}`,
+          is_correct: checkBox4.checked,
+        },
+      ],
+    };
+    (async () => {
+      const rawResponse = await fetch('/api/questions', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      const content = await rawResponse.json();
+    
+      console.log(content);
+    })();
+
+  }
+
+  deleteQuestion() {
+    fetch('/api/questions/:id' + id, {
+  method: 'DELETE',
+})
+.then(res => res.text()) // or res.json()
+.then(res => console.log(res))
+  }
+
   showActions(button) {
+    if (button.classList.contains("hidden")) {
       button.classList.remove("hidden");
-      // button.classList.add("hidden");
+    } else {
+      button.classList.add("hidden");
+    }
   }
 }
 
 window.onload = () => {
   const questions = new Questions();
+
+  const addButton = document.getElementById("addButton");
+  const resetButton = document.getElementById("resetButton");
+  addButton.onclick = () => questions.addQuestion();
+  resetButton.onclick = () => questions.addQuestion();
 
   questions.getAllQuestions();
 };
@@ -41,6 +103,6 @@ window.onload = () => {
 function onlyOne(checkbox) {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach((item) => {
-      if (item !== checkbox) item.checked = false
-  })
+    if (item !== checkbox) item.checked = false;
+  });
 }
