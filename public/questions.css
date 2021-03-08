@@ -3,7 +3,7 @@
 }
 
 body {
-  background: url(https://sourcedigit.com/wp-content/uploads/2020/03/Focal-Fossa_Plain_1-1536x864.png);
+  background: url(quiz-bg.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -106,6 +106,14 @@ input[type="checkbox"] {
   margin-top: 15px;
 }
 
+.delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+
 button {
   background-image: linear-gradient(
     to right,
@@ -125,7 +133,6 @@ button {
   box-shadow: 2px 2px 4px rgb(59, 59, 59);
   border-radius: 10px;
   border: 0px;
-  display: block;
 }
 
 button:focus {

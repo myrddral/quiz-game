@@ -14,7 +14,7 @@ class Questions {
           const deleteButton = document.createElement("button");
           deleteButton.classList.add('hidden', 'delete-button');
           deleteButton.innerText = "Törlés";
-          questionsDiv.appendChild(deleteButton);
+          question.appendChild(deleteButton);
           question.onclick = () => this.showActions(deleteButton);
           deleteButton.onclick = () => this.deleteQuestion(element.id);
         });
