@@ -7,6 +7,9 @@ const router = express.Router();
 
 router.use(express.static(getAbsolutePath('public')));
 
+router.get('/', (req, res, next) => {
+  res.sendFile('index.html', { root: getAbsolutePath('public') });
+});
 router.get('/game', (req, res, next) => {
   res.sendFile('game.html', { root: getAbsolutePath('public') });
 });
