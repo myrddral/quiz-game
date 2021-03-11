@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   background: url(quiz-bg.png);
   background-repeat: no-repeat;
@@ -100,7 +99,7 @@ main #answers {
 }
 
 #answers button:focus {
-  outline:0;
+  outline: 0;
 }
 
 #answers button:hover {
@@ -112,7 +111,7 @@ main #answers {
 }
 
 #answers button:active {
-  transform: scale(1.0);
+  transform: scale(1);
 }
 
 nav {
